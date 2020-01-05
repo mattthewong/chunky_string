@@ -1,8 +1,8 @@
 # chunky_string
 
-ChunkyString Iterator
+## ChunkyString Iterator
 
-    For the ChunkyString, we originally decided that we would make our
+For the ChunkyString, we originally decided that we would make our
 iterator with two private data members: a charsIndex_ to keep track of the position we are
 at in the ChunkyString; and a chunkIndex_ to keep track of which Chunk we are at in the 
 chunks_ data member of our ChunkyString object.
@@ -26,7 +26,7 @@ iterator:
 \\ operator*
 \\ operator==
 
-    As stated above, the ChunkyString iterator has two private data members: a charsIndex_ and
+As stated above, the ChunkyString iterator has two private data members: a charsIndex_ and
 a chunksIterator_. When copy constructing, we would set our new iterator's charsIndex_ and 
 chunksIterator_ equal to the original iterator's charsIndex_ and chunksIterator_, respectively.
    We said that when incrementing or decrementing the iterator, we would want 
@@ -49,14 +49,14 @@ probably implement it in the following way. We would simply initialize a constan
 the same charsIndex_ and chunksIterator_ as the original (non-constant) iterator, and return the
 new constant iterator.
 
-    The templated Iterator class returns two types: Element and ChunklistIterator. We need both of
+The templated Iterator class returns two types: Element and ChunklistIterator. We need both of
 these private data members because we need to not only keep track of the current character in the 
 ChunkyString but also the current Chunk, and for the second item, we use the built-in std::list 
 iterator.
 
 ChunkyString Chunk
 
-    We also stated that we would have liked to declare Chunk as a class, but now we are
+We also stated that we would have liked to declare Chunk as a class, but now we are
 choosing to modify it as a struct instead. We think this is a better decision because structs have
 public data members and member functions, and are just their as supporting data structures. They
 don't need anything fancy like operators or constructors that need to be specially defined; we can
@@ -70,7 +70,7 @@ the length_ data member of a Chunk.
 
 ChunkyString
 
-    ChunkyString has two data members: size_, which holds the number of characters in the 
+ChunkyString has two data members: size_, which holds the number of characters in the 
 ChunkyString, and chunks_, which is a type std::list that holds the actual characters of the 
 ChunkyString. Since we changed our design of the ChunkyString iterator, begin() and end() will
 also change in their implementation.
